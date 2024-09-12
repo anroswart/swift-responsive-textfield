@@ -369,7 +369,8 @@ extension ResponsiveTextField: UIViewRepresentable {
         uiView.textColor = textColor
         uiView.textAlignment = textAlignment
         
-        DispatchQueue.main.async {
+        if uiView.returnKeyType != returnKeyType {
+            uiView.returnKeyType = returnKeyType
             uiView.reloadInputViews()
         }
 
